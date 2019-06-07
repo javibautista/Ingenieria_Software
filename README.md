@@ -19,7 +19,8 @@ COMANDOS BASICOS
 * git config -- global user.email "email" Para configurar email del usuario
 * git config -- global user.name "nombre" Para configurar nombre del usuario vin
     Es el editor de código de git desde la consola, 
-    ahí escribes un comentario para la nueva versión que estés versionando 
+    ahí escribes un comentario para la nueva versión que estés versionando
+    
     (si no te deja escribir presiona a letra i). 
     Cuando termines presiona esc y luego :wq (write & quit)pasa salir. 
 .gitignore Es un archivo reservado de git que tenemos 
