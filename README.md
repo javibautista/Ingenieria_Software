@@ -32,17 +32,17 @@ Para que puedan clonar:
 git clone https://github.com/javibautista/Ingenieria_Software.git
 
 crear una rama
-...e/Herencia$ git branch rama_javi
+* git branch rama_javi
 
 ver la rama creada y donde estamos mirando(head)
-/Herencia$ git branch
-* master
-  rama_javi
+* git branch
+  * master
+    rama_javi
 
 cambiar hacia la creada:
-re/Herencia$ git checkout rama_javi
+* git checkout rama_javi
 
 ejemplo de subir trabajos:
-encia$ git add ejemplo.py
+* git add ejemplo.py
 encia$ git commit -m '1ª ejemplo subido'
 encia$ git push -u origin rama_javi
