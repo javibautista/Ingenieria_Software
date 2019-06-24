@@ -9,7 +9,7 @@ class Animal:
 
 class Gato(Animal):
 	def __init__(self, posicion=0):
-		#super(Animal,self).__init__()
+		super(Gato,self).__init__()
 		self.posicion = posicion
 		
 	def trepar(self):
@@ -26,7 +26,7 @@ class Gato(Animal):
 
 class Perro(Animal):
 	def __init__(self, posicion=0):
-		#super(Animal,self).__init__()
+		super(Perro,self).__init__()
 		self.posicion = posicion
 		
 	def caminar(self):
