@@ -4,11 +4,13 @@ class Poligono:
     def __init__(self,vertices):
         self.vertices = vertices#[(x,y), (x, y), (x, y)]
         #print(self.vertices[1][0])
+    def __str__(self):
+        return str(self.vertices)
 
 class Rectangulo(Poligono):
-    def __init__(self, vertices):
-        self.vertices = vertices
-        Poligono.__init__(self,vertices)
+    def __init__(self,vertices):#, vertices):
+        #Poligono.__init__(self,vertices)
+        super().__init__(vertices)
     def altura(self):
         if self.vertices[0][0] == self.vertices[1][0]:
             altura = math.sqrt (abs((self.vertices[1][0]- self.vertices[0][0])**2+(self.vertices[1][1]- self.vertices[0][1])**2))
@@ -40,6 +42,7 @@ class Rectangulo(Poligono):
 if __name__ == '__main__':
     print('_____________clase Rectangulo_______________')
     print()
+    pol = Poligono([(1,2),(1,5),(6,2),(6,5)])
     #rect = Rectangulo([[1,2],[1,5],[6,2],[6,5]])
     rect = Rectangulo([(1,2),(1,5),(6,2),(6,5)])
     print(rect.altura())
@@ -47,3 +50,6 @@ if __name__ == '__main__':
     print(rect.superficie())
     #[[1,2], [3,4]]
     #a[0][0]
+    print(str(pol))
+    print(dir(pol))
+    print(vars(pol))
