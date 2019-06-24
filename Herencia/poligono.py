@@ -47,9 +47,3 @@ if __name__ == '__main__':
     print(rect.superficie())
     #[[1,2], [3,4]]
     #a[0][0]
-    
-    
-    
-    
-    
-    
