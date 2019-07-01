@@ -1,10 +1,14 @@
+def pasear_mascota(self):
+    for _ in range(5):
+        self.caminar()
+    print("La mascota quedó en {}".format(self.posicion))
+
+
 class Animal:
-	#def __init__(self):
-		#super().__init__()#super(Animal,self).__init__()
-	def pasear_mascota(self):
-		for _ in range(5):
-			self.caminar()
-		print("La mascota quedó en {}".format(self.posicion))
+	#def pasear_mascota(self):
+		#for _ in range(5):
+			#self.caminar()
+		#print("La mascota quedó en {}".format(self.posicion))
 		#print("La mascota quedo en %d"%(self.posicion))
 	def __str__(self):
 		return "Posicion donde se encuentra el Animal: %s"%(self.posicion)
@@ -17,7 +21,7 @@ class Animal:
 
 class Gato(Animal):
 	def __init__(self, posicion=0):
-		super().__init__()#super(Gato,self).__init__()
+		super().__init__()
 		self.posicion = posicion
 		
 	def trepar(self):
@@ -34,7 +38,7 @@ class Gato(Animal):
 
 class Perro(Animal):
 	def __init__(self, posicion=0):
-		super().__init__()#super(Perro,self).__init__()
+		super().__init__()
 		self.posicion = posicion
 		
 	def caminar(self):
@@ -49,10 +53,11 @@ if __name__ == '__main__':
 	perro = Perro()
 	print(perro.posicion)
 	#print(perro.caminar())
-	perro.pasear_mascota()
-	perro.pasear_mascota()
-	perro.pasear_mascota()
-	perro.pasear_mascota()
+	#instanciar una funcion       Instanciar un Metodo
+	pasear_mascota(perro)         #perro.pasear_mascota()
+	pasear_mascota(perro)         #perro.pasear_mascota()
+	pasear_mascota(perro)         #perro.pasear_mascota()
+	pasear_mascota(perro)         #perro.pasear_mascota()
 	#print(perro.caminar())
 	perro.ladrar()
 
@@ -63,7 +68,8 @@ if __name__ == '__main__':
 	print(gato.posicion)
 	gato.maullar()
 	gato.trepar()
-	gato.pasear_mascota()
+	#instanciar una funcion       Instanciar un Metodo
+	pasear_mascota(gato)         #gato.pasear_mascota()
 	print(gato.caminar())
 	print(str(gato))
 	print(perro.__eq__(gato))
