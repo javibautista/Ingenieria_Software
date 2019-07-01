@@ -26,3 +26,23 @@ COMANDOS BASICOS
     que crear si queremos decirle a git los archivos que no vamos a utilizar y así decida ignorarlos. 
     Escribe dentro de el archivo .gitignore los nombres de los archivos que desees ignorar. 
     Nota: Las carpetas se escriben solas y los archivos con su terminación.
+
+# JAVI TUTORIAL :)
+Para que puedan clonar:
+git clone https://github.com/javibautista/Ingenieria_Software.git
+
+crear una rama
+* git branch rama_javi
+
+ver la rama creada y donde estamos mirando(head)
+* git branch
+  * master
+    rama_javi
+
+cambiar hacia la creada:
+* git checkout rama_javi
+
+ejemplo de subir trabajos:
+* git add ejemplo.py
+encia$ git commit -m '1ª ejemplo subido'
+encia$ git push -u origin rama_javi
