@@ -18,4 +18,7 @@ encia$ git add ejemplo.py
 encia$ git commit -m '1ª ejemplo subido'
 encia$ git push -u origin rama_javi
 
+encia$ git checkout origin master
+encia$ git merge rama_Javier
+encia$ git push -u origin master
 
