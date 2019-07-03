@@ -75,6 +75,8 @@ class DocenteTeorico(Docente):
 			print('Cuántos lados tiene un polígono?\n1) 5\n2) Más de 2*\n3) 5 o más')
 		elif self.materia == 'Programación':
 			print('Que es Scrum?\n1) Una forma de escribir código\n2) Una metodología ágil*\n3) Una herramienta de debugging')
+		else:
+		    print('Ingreso mal la materia debe ser una de estas: Geografía, Matemática, Programación')
 
 class DocentePractico(Docente):
 
@@ -86,9 +88,10 @@ class DocentePractico(Docente):
 		print(self.unidad)#print('El docente de práctica da la: %s'%(self.unidad))
 		if self.materia == 'Matemática':
 			print ('Cuanta plata gastaste si hiciste 10km en un auto que consume 1.5litros por cada kilometro y la nafta cuesta 50 pesos por litro? \n1)800\n2)750\n3)500')
+		elif self.materia == 'Programación':
+			print('En python,que valor resulta de hacer "a==b==a is b" si tanto a como b tiene el valor [1,2,3]? \n1)True\n2)False\n3)Da error')
 		else:
-			if self.materia == 'Programación':
-				print('En python,que valor resulta de hacer "a==b==a is b" si tanto a como b tiene el valor [1,2,3]? \n1)True\n2)False\n3)Da error')
+		    print('Ingreso mal la materia debe ser una de estas: Matemática, Programación')
 
 if __name__ == '__main__':
 	#profe = Persona('Martin', 'Gaitan', 25678930, 38)
