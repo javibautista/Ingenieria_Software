@@ -2,7 +2,7 @@ languaje: python
 python:
  - "3.5"
 # command to install dependencies
-install: "pip install --user coverage"
+install: "pip install --user coverage mock"
 # command to run tests
 script:
 - coverage run testing/test.py
