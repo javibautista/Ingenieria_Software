@@ -2,8 +2,8 @@ import unittest
 import sut
 #from math import math.sum
 #from unittest.mock.patch(math.exp, math.sqrt)
-from unittest.mock import MagicMock
-from unittest.mock import patch
+from unittest.mock import MagicMock, mock_open
+from unittest.mock import patch, mock_open
 class TestSut(unittest.TestCase):
     """
     def sumalista(listaNumeros):
