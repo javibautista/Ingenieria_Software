@@ -7,7 +7,7 @@ python:
   - "pypy3"  # currently Python 3.6.1,  PyPy 7.1.1-beta0
 # command to install dependencies
 install:
-- "pip install --user mock==2.0"
+- "pip install mock==2.0"
 - "pip install coverage"
 # command to run tests
 script:
