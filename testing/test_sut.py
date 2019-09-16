@@ -50,8 +50,8 @@ class TestSut(unittest.TestCase):
         #9
     @patch('sut.sumar')
     def tests_costototal(self, sumar):
-        sumar.return_value = 2
-        #sut.sumar=MagicMock(return_value=2)
+        sumar.return_value = 2 #usando patch sut.sumar
+        #sut.sumar=MagicMock(return_value=2) #entes de usar patch
         a = sut.costototal(5, 4)
         esperado = 'El costo total es $2'
         self.assertEqual(a, esperado)
@@ -70,8 +70,10 @@ class TestSut(unittest.TestCase):
         exp.return_value = 2
         a = sut.supercalc(3)
         self.assertTrue(a == 2)
+        
+    def test_CalcuClass(self):
+        calc = sut.CalcuClass().suma(a=5, b=4)
+        self.assertTrue(calc == 9)
 
-
-       
 if __name__ == '__main__':
     unittest.main()
