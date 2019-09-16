@@ -2,7 +2,20 @@ def manejar_vehiculo(self):
     for _ in range(3):
         self.andar()
     print("El {} quedó en posicion {}".format(type(self).__name__, self.posicion))
-
+    
+def carga_limite(linite):
+    def nuevo_limite(self):
+        if self.kilos > 300:
+            print('Camión sobrecargado no arrancar')
+        limite(self)
+    return nuevo_limite
+    
+"""
+def verificar_rueda(func):
+    def nueva_funcion(self):
+        print('revisar rueda antes')
+        func(self)
+"""
 
 class Vehiculo:
     def __init__(self, posicion = 0):
