@@ -1,0 +1,17 @@
+languaje: python
+python:
+ - "3.7"
+# command to install dependencies
+install: #"pip install -r requirements.txt"
+#- pip install -r requirements.txt
+- pip install setuptools
+- pip3 install pip
+#- python3 -m pip install --upgrade pip
+- pip install --user mock==2.0
+- pip install --user coverage
+#- pip
+# command to run tests
+script:
+- coverage run testing/test.py
+- coverage run testing/test_sut.py
+- coverage report

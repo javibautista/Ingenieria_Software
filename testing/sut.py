@@ -67,6 +67,7 @@ class CalcuClass:
 
     def __init__(self):
         self.historico = defaultdict(list)
+        #print(self.historico)
 
     @_registrar_operacion
     def suma(self, a, b):
@@ -79,3 +80,12 @@ class CalcuClass:
     @_registrar_operacion
     def sumar_varios(self, lista):
         return sumatoria(lista, len(lista))
+        
+if __name__ == '__main__':
+    print('\n_____ CalcuClass _____\n')
+    calc = CalcuClass()
+    print(calc.suma(a=5, b=4))
+    print(calc.historico)
+    print(calc.suma(a=4, b=2))
+    print(calc.historico)
+    print(sumar(4,1))
