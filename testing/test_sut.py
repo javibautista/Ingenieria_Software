@@ -71,9 +71,17 @@ class TestSut(unittest.TestCase):
         a = sut.supercalc(3)
         self.assertTrue(a == 2)
         
-    def test_CalcuClass(self):
+    def test_CalcuClass_sum(self):
         calc = sut.CalcuClass().suma(a=5, b=4)
         self.assertTrue(calc == 9)
+        
+    def test_CalcuClass_pro(self):
+        calcu = sut.CalcuClass().producto(a=5, b=8)
+        self.assertTrue(calcu == 40)
+        
+    def test_CalcuClass_list(self):
+        calcu = sut.CalcuClass().sumar_varios(lista = [3,7])
+        self.assertTrue(calcu == 10)
 
 if __name__ == '__main__':
     unittest.main()
