@@ -1,14 +1,21 @@
 from django.http import HttpResponse
 
+from django.template import loader
+
 from .models import Pregunta
 
 # index: indice, question: pregunta
 def indice(request):
     # latest_question_list: ultima_pregunta_lista
     ultima_pregunta_lista = Pregunta.objects.order_by('-pub_fecha')[:5]
-    # output: salida
-    salida = ', '.join([q.pregunta_text for q in ultima_pregunta_lista])
-    return HttpResponse(salida)
+    # template: plantilla
+    plantilla = loader.get_template('encuestas/indice.html')
+    # context: context
+    contexto = {
+        'ultima_pregunta_lista': ultima_pregunta_lista,
+    }
+    # return HttpResponse(template.render(context, request))
+    return HttpResponse(plantilla.render(contexto, request))
 
 # detail: detalle
 def detalle(request, pregunta_id):
