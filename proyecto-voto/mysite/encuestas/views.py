@@ -29,8 +29,8 @@ def resultados(request, pregunta_id):
     respuesta = "Estás viendo los resultados de la pregunta %s."
     return HttpResponse(respuesta % pregunta_id)
 
-# vote: voto
-def voto(request, pregunta_id):
+# vote: votar
+def votar(request, pregunta_id):
     return HttpResponse("Estás votando una pregunta %s." % pregunta_id)
 
 

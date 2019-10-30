@@ -14,6 +14,6 @@ urlpatterns = [
     path('<int:pregunta_id>/', views.detalle, name='detalle'),
     # http://127.0.0.1:8000/encuestas/5/resultados/
     path('<int:pregunta_id>/resultados/', views.resultados, name='resultados'),
-    # http://127.0.0.1:8000/encuestas/5/voto/
-    path('<int:pregunta_id>/voto/', views.voto, name='voto'),
+    # http://127.0.0.1:8000/encuestas/5/votar/
+    path('<int:pregunta_id>/votar/', views.votar, name='votar'),
 ]
