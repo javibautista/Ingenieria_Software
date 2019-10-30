@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 #from django.template import loader
-from django.http import Http404
-from django.shortcuts import render
+#from django.http import Http404
+from django.shortcuts import get_object_or_404, render
 
 from .models import Pregunta
 
@@ -21,10 +21,7 @@ def indice(request):
 
 # detail: detalle
 def detalle(request, pregunta_id):
-    try:
-        pregunta = Pregunta.objects.get(pk=pregunta_id)
-    except Pregunta.DoesNotExist:
-        raise Http404("La Pregunta no existe")
+    pregunta = get_object_or_404(Pregunta, pk=pregunta_id)
     return render(request, 'encuestas/detalle.html', {'pregunta': pregunta})
 
 # results: resultados, response: respuesta
