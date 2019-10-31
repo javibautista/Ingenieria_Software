@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'encuestas/style.css' %}">
+
 {% if latest_pregunta_lista %}
     <ul>
     {% for pregunta in latest_pregunta_list %}

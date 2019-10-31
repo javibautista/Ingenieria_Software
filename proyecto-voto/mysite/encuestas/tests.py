@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.test import TestCase
 from django.utils import timezone
 
-from .models import Pregunta
+from .models import Opcion, Pregunta
 
 
 class PreguntaModelTests(TestCase):
