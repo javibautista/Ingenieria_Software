@@ -23,7 +23,8 @@ class Pregunta(models.Model):
 class Opcion(models.Model):
     pregunta = models.ForeignKey(Pregunta, on_delete=models.CASCADE)
     opcion_text = models.CharField(max_length=200)
-    votos = models.IntegerField(default=0)
+    #votos = models.IntegerField(default=0)
+    correcto = models.BooleanField(default=False)
     
     def __str__(self):
         return self.opcion_text

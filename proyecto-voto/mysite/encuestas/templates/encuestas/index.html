@@ -1,12 +1,15 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'encuestas/style.css' %}">
+{% if latest_pregunta_list %}
 
-{% if latest_pregunta_lista %}
+<h1>
+<strong>Preguntas</strong>
+</h1>
+
+<link rel="stylesheet" type="text/css" href="{% static 'encuestas/style.css' %}">
     <ul>
     {% for pregunta in latest_pregunta_list %}
-        <!-- http://127.0.0.1:8000/encuestas/5/   -->
-        <li><a href="{% url 'encuestas:detail' pregunta.id %}">{{ pregunta.pregunta_text }}</a></li>
+        <li><a href="{% url 'encuestas:detail' pregunta.id %}"><p style="color:blue"><input type="submit" value="{{ pregunta.pregunta_text }}"></a></li></p>
     {% endfor %}
     </ul>
 {% else %}

@@ -4,12 +4,12 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from .models import Opcion, Pregunta
-
+"""
 from django.http import HttpResponse
 from django.template import loader
 from django.http import Http404
 from django.shortcuts import render
-
+"""
 # index: indice, pregunta: pregunta
 class IndexView(generic.ListView):
     template_name = 'encuestas/index.html'
@@ -41,6 +41,19 @@ class ResultsView(generic.DetailView):
     model = Pregunta
     template_name = 'encuestas/results.html'
 
+def corregir(request, pregunta_id):
+	pregunta = get_object_or_404(Pregunta, pk=pregunta_id)	
+	opciones = pregunta.opcion_set.all()
+	elegidas= pregunta.opcion_set.filter(pk__in=request.POST.getlist('opcion'))
+	c={} 
+	for opcion in opciones:   
+		if opcion.correcto :
+			c[opcion]= opcion in elegidas
+		else:
+			c[opcion] = opcion not in elegidas
+	return render(request,'encuestas/results.html',{'pregunta': pregunta, 'c': c})
+
+"""
 # vote: voto
 def voto(request, pregunta_id):
     pregunta = get_object_or_404(Pregunta, pk=pregunta_id)
@@ -59,5 +72,5 @@ def voto(request, pregunta_id):
         # los datos POST. Esto evita que los datos se publiquen dos veces si un
         # usuario presiona el botón Atrás.
         return HttpResponseRedirect(reverse('encuestas:results', args=(pregunta.id,)))
-
+"""
 

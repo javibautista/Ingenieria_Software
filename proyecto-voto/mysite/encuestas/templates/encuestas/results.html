@@ -1,9 +1,18 @@
+{% load static %}
 <h1>{{ pregunta.pregunta_text }}</h1>
-
-<ul>
-{% for opcion in pregunta.opcion_set.all %}
-    <li>{{ opcion.opcion_text }} -- {{ opcion.votos }} voto{{ opcion.votos|pluralize }}</li>
+<li>RESPUESTAS</li>
+<link rel="stylesheet" type="text/css" href="{% static 'encuestas/style.css' %}">
+<ul> <!--el (c) itera y muestra (clave(opcion)-resultado(true o false)) -->
+{% for opcion,resultado in c.items %} 
+    <!-- {{ opcion.correcto}}-->
+    <!--doble llave imprime -->
+	<li>{{ opcion }} /.Acertaste?--> {{resultado}} {% if opcion.correcto %}
+        <p style="color:green"> correcto </p>
+		{%else%}
+        <p style="color:red"> incorrecto </p>
+        {%endif%}
+    </li>
 {% endfor %}
 </ul>
 
-<a href="{% url 'encuestas:detail' pregunta.id %}">¿Votar de nuevo?</a>
+<a href="{% url 'encuestas:detail' pregunta.id %}"><input type="submit" value="Votar de nuevo"></a>

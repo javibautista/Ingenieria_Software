@@ -15,5 +15,6 @@ urlpatterns = [
     # http://127.0.0.1:8000/encuestas/5/resultados/
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     # http://127.0.0.1:8000/encuestas/5/voto/
-    path('<int:pregunta_id>/voto/', views.voto, name='voto'),
+    #path('<int:pregunta_id>/voto/', views.voto, name='voto'),
+    path('<int:pregunta_id>/corregir/', views.corregir, name='corregir'),
 ]
