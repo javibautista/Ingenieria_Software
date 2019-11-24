@@ -1,0 +1,16 @@
+{% load static %}
+<h1>{{ question.question_text }}</h1>
+<li>RESPUESTAS</li>
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<ul>
+{% for opcion,resultado in c.items %} 
+	<li>{{ opcion }} /.Acertaste?-->  {{resultado}} {% if opcion.correcto %}
+<p style="color:green"> correcto </p>
+		{%else%}
+<p style="color:red"> incorrecto </p>
+        {%endif%}
+    </li>
+{% endfor %}
+</ul>
+<a href="{% url 'polls:detail' question.id %}"><input type="submit" value="Volver a seleccionar"></a>
+

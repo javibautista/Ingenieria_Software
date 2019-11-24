@@ -1,0 +1,11 @@
+/**li a {
+    color: green;
+}**/
+body,
+html {
+    min-height:100%;
+}
+body {
+    background: white url("images/background.gif") no-repeat; /*center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; color: #333; line-height: 1;*/
+    background-size:cover;
+}

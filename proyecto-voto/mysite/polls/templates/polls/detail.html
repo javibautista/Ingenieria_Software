@@ -1,0 +1,16 @@
+{% load static %}
+<h1>{{ question.question_text }}</h1>
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"> 
+<ul>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'polls:corregir' question.id %}" method="post">
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+    <li><input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+    <label for="choice{{ forloop.counter }}"><tag1 style="color:blue">{{ choice.choice_text  }}</label></tag1></li>
+{% endfor %}
+</ul>
+<input type="submit" value="Seleccione">
+</form>
